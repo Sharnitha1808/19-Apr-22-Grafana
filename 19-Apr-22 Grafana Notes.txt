@@ -1,0 +1,52 @@
+    1  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    2  chmod +x kubectl
+    3  mv kubectl /usr/local/bin/kubectl
+    4  curl -LO https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
+    5  chmod +x kops-linux-amd64
+    6  mv kops-linux-amd64 /usr/local/bin/kops
+    7  kubectl version
+    8  kops version
+    9  export NAME=dptcluster.k8s.local
+   10  export KOPS_STATE_STORE=s3://cali-buck
+   11  export NAME=dptcluster.k8s.local
+   12  export KOPS_STATE_STORE=s3://cali-buck
+   13  ssh-keygen -t rsa
+   14  kops create cluster --zones=us-west-1a,us-west-1b,us-west-1c ${NAME}
+   15  kops create cluster --zones=us-west-1a,us-west-1b ${NAME}
+   16  kops update cluster --name dptcluster.k8s.local --yes --admin
+   17  yum install git -y
+   18  git clone https://abithasrinivasan220800@bitbucket.org/abithasrinivasan2208-admin/kubernetesyaml.git
+   19  ls -l
+   20  cd kubernetesyaml/
+   21  ls -l
+   22  cd manifests/
+   23  ls -l
+   24  cd prometheus-grafana-stack/
+   25  cd manifests/
+   26  ls -l
+   27  cd setup/
+   28  ls -l
+   29  kubectl apply -f .
+   30  kubectl get ns
+   31  cd ..
+   32  ls -l
+   33  kubectl apply -f .
+   34  kubectl get pods -n monitoring
+   35  kubectl get service -n monitoring
+   36  cd ..
+   37  ls -l
+   38  cd manifests/
+   39  ls -l
+   40  cd ingress-controller.yaml
+   41  kubectl apply -f ingress-controller.yaml
+   42  kubectl get ns
+   43  kubectl get pods -n ingress-nginx
+   44  kubectl get service -n ingress-nginx
+   45  ls -l
+   46  cat ingress-grafana-resource.yaml
+   47  vi ingress-grafana-resource.yaml
+   48  kubectl apply -f ingress-grafana-resource.yaml
+   49  kubectl get ns
+   50  kubectl get ingress -n ingress-nginx
+   51  kubectl get ingress -n monitoring
+   52  history
